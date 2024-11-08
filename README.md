@@ -1,109 +1,68 @@
 # DL_Final_Project
 
-Project Proposal: AI-Based Mental Health Support System Using Deep Learning
+**Project Proposal
+**
+**Autonomous Vehicle Right-of-Way Decision System for Four-Way Stop Intersections
+**
+**Introduction
+**
+Navigating intersections with stop signs is a fundamental challenge for autonomous vehicles (AVs). It involves determining the right-of-way based on the arrival sequence and traffic rules. Four-way stop intersections require AVs to coordinate effectively with other vehicles—including human-driven ones—while prioritizing safety, rule adherence, and smooth traffic flow.
 
-1. Project Overview
-Project Title:  
-AI-Based Mental Health Support System
+This project proposes developing a decision-making model that enables AVs to handle right-of-way at four-way stop intersections. By implementing deep learning techniques for traffic sign detection, vehicle tracking, and rule-based decision-making, this system aims to improve AV functionality in urban settings, facilitating safe and efficient intersection navigation.
 
-Objective:
-  
-The primary goal of this project is to develop a conversational AI system that uses deep learning techniques to offer mental health support by engaging in empathetic, meaningful conversations with users. The system will detect emotional states, provide personalized coping strategies, and recommend appropriate mental health resources based on user inputs. This AI solution will be designed to assist individuals in managing mental health issues such as stress, anxiety, and depression, while ensuring data privacy and ethical compliance.
+**Objectives
+**
+Stop Sign Detection: Develop a model capable of reliably detecting stop signs in varied conditions (e.g., different lighting and weather scenarios).
+Vehicle Detection and Tracking: Create a system to detect and track nearby vehicles at intersections, monitoring their arrival sequence and position.
+Right-of-Way Decision-Making: Implement a decision-making algorithm that assigns the correct right-of-way based on arrival times, positioning, and traffic rules.
+Simulation and Testing: Test and validate the model’s performance in simulated four-way stop scenarios using appropriate alternatives to CARLA.
 
-Target Audience:  
-Individuals experiencing mild to moderate mental health challenges
-Students and young professionals seeking mental health support
-Healthcare organizations looking for AI tools to supplement therapy services
+**Methodology
+**
+**1. Dataset Collection and Preprocessing
+**LISA Traffic Sign Dataset 
+Link: https://www.kaggle.com/datasets/mbornoe/lisa-traffic-light-dataset
+A dataset containing annotated images of various traffic signs, including stop signs, is suitable for training a detection model.
+Berkeley DeepDrive (BDD100K) 
+ Link: https://www.kaggle.com/datasets/solesensei/solesensei_bdd100k
+A large-scale dataset with labeled images of vehicles and traffic signs under diverse driving conditions.
+Synthetic Data Generation: Use alternative simulation tools like LGSVL or Webots to generate labeled intersection scenarios for additional model training and testing.
 
-Expected Outcomes:
-An AI chatbot capable of generating context-aware, empathetic responses
-Personalized mental health advice based on real-time sentiment analysis
-A privacy-conscious system capable of recommending appropriate mental health resources and detecting when professional intervention is needed
+**2. Model Design and Training
+**
+ Stop Sign Detection: Utilize a pre-trained model such as YOLOv5 or Faster R-CNN, fine-tuned on the LISA and BDD100K datasets. Data augmentation (e.g., brightness adjustment, scaling) will be applied to improve robustness under various conditions.
+Vehicle Detection and Tracking: Implement YOLO for real-time vehicle detection, combined with Deep SORT tracking, to continuously monitor other vehicles at intersections.
+Right-of-Way Decision-Making: Develop a decision-making module using a rule-based approach or reinforcement learning techniques. This module will prioritize vehicles based on arrival order and positioning while simulating human-like driving decisions.
 
-2. Problem Statement
+**3. Simulation and Testing
+**   Simulation Tools: 
+Conduct tests using LGSVL or Webots to model intersection scenarios and evaluate the AV’s decision-making performance in real-time. Include diverse scenarios to simulate different arrival orders, unexpected stops, and close-call situations.
+Evaluation Metrics:
+Detection Accuracy: Assess the system’s success in recognizing stop signs and tracking vehicles under varied conditions.
+Right-of-Way Accuracy: Measure the accuracy of right-of-way decisions, ensuring compliance with traffic rules and avoidance of conflicts.
+Safety and Coordination: Evaluate safety by measuring the model’s response time, decision confidence, and ability to handle unexpected behaviors from human drivers.
 
-Mental health issues are on the rise globally, with many individuals lacking access to timely and affordable support. While professional therapy is essential, many people hesitate to seek help due to stigma, costs, or the unavailability of services. AI-based systems, if designed carefully, can act as supplemental tools by providing real-time, low-barrier access to mental health advice and self-care strategies. However, current AI systems are not sufficiently empathetic, adaptive, or personalized to mental health contexts. This project aims to fill that gap.
-3. Scope of Work
+**Key Challenges and Solutions
+**
+1. Complexity of Right-of-Way Decisions: Intersections with multiple vehicles require precise timing and contextual awareness. To address this, the project will use a combination of rule-based decision-making and reinforcement learning, enabling adaptive responses based on real-time data.
 
-Phase 1: Research and Data Collection
-Objective: Gather relevant datasets and perform a comprehensive study on the ethical concerns related to AI in mental health.
-Tasks:
-Collect and curate publicly available mental health dialogue datasets (e.g., Reddit threads, therapy conversations, EmpatheticDialogues dataset).
-Research privacy regulations (HIPAA, GDPR) and ethical guidelines for AI in healthcare.
-Define specific emotional states and coping strategies that the system should handle.
-  
-Phase 2: Model Development
-Objective: Develop a deep learning model capable of understanding user input, detecting emotions, and generating helpful responses.
-Tasks:
-Natural Language Processing: Use a pre-trained GPT-4 or BERT model fine-tuned on mental health-specific conversations.
-Sentiment Analysis: Incorporate BERT or RoBERTa for sentiment and emotion detection to assess users’ emotional states.
-Coping Strategy Generator: Utilize Variational Autoencoders (VAEs) or Seq2Seq models to generate diverse coping strategies (e.g., mindfulness techniques, relaxation exercises).
-Reinforcement Learning: Implement reinforcement learning to refine responses based on user feedback, improving personalization over time.
+2. Environmental Variability: Variations in lighting and weather can affect stop sign detection. Training on a broad dataset, augmented with synthetic images from simulation environments, will increase robustness.
 
-Phase 3: System Integration
-Objective: Develop and integrate the core system components.
-Tasks:
-Chatbot Interface: Build an easy-to-use chatbot interface for real-time interaction with users.
-Mental Health Tracking: Create a system where users can log their moods over time, generating personalized suggestions based on trends.
-Resource Recommendation: Implement a feature for suggesting mental health resources or professional intervention in cases of severe emotional distress.
+3. Predicting Human Behavior: Human drivers may act unpredictably. A predictive behavior model will be developed to infer likely actions based on observed vehicle positions, supporting timely and adaptive AV responses.
 
-Phase 4: Testing and Validation
-Objective: Ensure the system’s accuracy and reliability through testing with diverse user groups.
-Tasks:
-Perform unit testing on the AI model to validate performance on detecting emotions and generating appropriate responses.
-Conduct user testing with a small group of participants and mental health professionals to receive feedback on system performance and emotional impact.
-Ensure the system complies with ethical standards, including user privacy and safety measures.
+**Expected Outcomes
+**
+By the end of this project, the AV right-of-way decision system will:
+Accurately detect stop signs and identify vehicles across varied environmental conditions.
+Make correct, rule-compliant decisions for yielding or proceeding based on traffic protocols.
+Enhance the safety and coordination of AVs with human drivers, supporting reliable and smooth interactions at intersections.
 
+**References
+**
+"Rule-Based Decision-Making System for Autonomous Vehicles at Intersections with Mixed Traffic Environment," IEEE Xplore. 
+This paper provides insights into decision-making frameworks for AVs in complex traffic environments.
+  	Link: https://ieeexplore.ieee.org/document/9565085
+Jialin Li et al., "A Shared-Road-Rights Driving Strategy for Right-of-Way Conflicts," explores shared road strategies for AVs, emphasizing conflict-free, cooperative decision-making at intersections.
 
-4. Deep Learning Techniques Used
-
-1. Transformer Models (GPT-4, BERT):
-For understanding context and generating human-like conversational responses in real-time.
-
-2. Sentiment and Emotion Analysis:
-   Using BERT or RoBERTa to detect emotional states (e.g., stress, anxiety, sadness) from user input and adjust responses accordingly.
-
-3. Reinforcement Learning:
-   Personalized response generation based on user feedback and interaction patterns over time.
-
-4. Variational Autoencoders (VAEs):
-   For generating diverse and personalized coping strategies, journaling prompts, and relaxation techniques.
-
-5. Seq2Seq Models:
-   For generating follow-up questions and conversation continuity while maintaining empathetic interactions.
-
-6. Multimodal Learning (optional):
-If voice or video data is included, multimodal learning techniques can be used to integrate and analyze text, audio, or facial expression data for better emotional understanding.
-
-7. Differential Privacy:
-Ensure user data privacy through techniques like differential privacy and data encryption, complying with regulations like HIPAA and GDPR.
-
-
-
-5. Technical Resources
-Computing Power: Access to GPU-enabled services (e.g., Google colab, AWS, Google Cloud, or Azure) for training deep learning models.
-Development Tools: Python, TensorFlow, PyTorch, Hugging Face, and OpenAI APIs for model development and deployment.
-Datasets: Publicly available mental health conversation datasets, such as Reddit mental health threads, EmpatheticDialogues, or therapy session transcripts (de-identified and anonymized).
-
-
-6. Conclusion
-
-This project will leverage cutting-edge deep learning techniques to build an AI system that offers mental health support in an accessible and personalized way. By combining models for dialogue generation, emotion detection, and reinforcement learning, the system aims to provide valuable, empathetic assistance while maintaining strict adherence to ethical guidelines and data privacy standards. This project has the potential to greatly benefit individuals seeking mental health support while easing the burden on healthcare providers.
-
-7. References
-
- Publicly Available Mental Health Datasets
-These datasets can help you train models for sentiment analysis, emotion detection, or conversational AI in the context of mental health.
-Reddit Mental Health Dataset:    [https://github.com/juand-r/entity-recognition-datasets/tree/master/data/reddit](https://github.com/juand-r/entity-recognition-datasets/tree/master/data/reddit)  
-
-A dataset containing Reddit posts related to mental health topics. Useful for building conversational models or sentiment analysis systems.
-
-EmpatheticDialogues Dataset:  [https://github.com/facebookresearch/EmpatheticDialogues](https://github.com/facebookresearch/EmpatheticDialogues)  
- A dataset of human-to-human dialogues where one speaker talks about a personal situation, and the other responds empathetically. Great for training chatbots to respond to emotional cues.
-Research Papers and Articles on AI in Mental Health
-These papers provide insights into how AI is being used for mental health applications and the ethical considerations involved.
-Artificial Intelligence for Mental Health and Mental Illnesses: An Overview (Research Paper):  [https://www.frontiersin.org/articles/10.3389/fpsyt.2020.00841/full](https://www.frontiersin.org/articles/10.3389/fpsyt.2020.00841/full)  
-This paper discusses the use of AI in mental health diagnosis and intervention, highlighting the potential and challenges of AI-driven mental health support.
-The Ethical Use of AI in Mental Health (Journal Article):    [https://journals.sagepub.com/doi/10.1177/0020731419836253](https://journals.sagepub.com/doi/10.1177/0020731419836253)  
- This article focuses on ethical considerations, including privacy, fairness, and data security in the development of AI-based mental health tools.
+This project will deliver a right-of-way system that integrates detection, tracking, and adaptive decision-making, advancing AV technology for safer, more efficient urban navigation.
 
