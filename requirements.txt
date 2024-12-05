@@ -1,0 +1,9 @@
+torch
+torchvision
+ultralytics
+deep-sort-realtime
+supervision
+filterpy
+opencv-python
+numpy
+Pillow

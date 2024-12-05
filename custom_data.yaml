@@ -1,0 +1,22 @@
+# Path to your processed dataset directories
+path: /content/Output_Data  # Change this to your dataset root directory
+train: train/images  # Training images path
+val: val/images      # Validation images path
+test: test/images    # Test images path
+
+
+# Class names
+# Classes
+nc: 10  # Number of classes (0-9)
+names: [
+  'pedestrian',    # class 0
+  'rider',         # class 1
+  'car',           # class 2
+  'truck',         # class 3
+  'bus',           # class 4
+  'motorcycle',    # class 5
+  'bicycle',       # class 6
+  'caravan',       # class 7
+  'traffic sign',     # class 8
+  'traffic light'  # class 9
+]

@@ -1,0 +1,17 @@
+path: /content/processed_traffic_signs
+train: train/images
+val: val/images
+test: test/images
+nc: 49
+names: ['bicycle', 'bus_stop', 'children', 'crosswalk', 
+                  'do_not_enter', 'do_not_turn_left', 'do_not_turn_right',
+                  'do_not_u_turn', 'give_way', 'left_lane_enter', 'left_right_lane', 
+                  'left_sharp_curve', 'left_turn', 'light_green', 'light_red',
+                  'light_traffic', 'light_yellow', 'no_overtaking', 'no_overtaking_truck',
+                  'no_parking', 'no_passing', 'no_stop', 'no_waiting', 'parking',
+                  'railway_crossing', 'refueling', 'right_sharp_curve', 'right_turn',
+                  'road_main', 'road_rough', 'road_slippery', 'road_work', 'rough_road',
+                  'round_about', 'snow_warning', 'speed_limit_100', 'speed_limit_120',
+                  'speed_limit_20', 'speed_limit_30', 'speed_limit_40', 'speed_limit_50', 
+                  'speed_limit_60', 'speed_limit_70', 'speed_limit_80', 'stop', 't_intersection_l', 
+                  'truck', 'u_turn', 'warning']
