@@ -1,4 +1,4 @@
-# DL_Final_Project
+# AVʼs Right-of-Way Decision making System Using Deep Learning
 
 Project Proposal
 
