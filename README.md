@@ -51,6 +51,8 @@ Key Challenges and Solutions
 
 Expected Outcomes
 
+<img width="1440" alt="Screenshot 2024-12-03 at 1 28 06 PM" src="https://github.com/user-attachments/assets/6100eff0-563e-4672-a70e-ea1c3ab1207e" />
+
 By the end of this project, the AV right-of-way decision system will:
 Accurately detect stop signs and identify vehicles across varied environmental conditions.
 Make correct, rule-compliant decisions for yielding or proceeding based on traffic protocols.
